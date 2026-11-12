@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Posts ready to paste</title>
+<style>
+body{margin:0;background:#0b1220;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.55;padding:18px}
+h1{font-size:1.3rem;margin:4px 0 2px}
+p.lede{color:#9aa7bd;font-size:.86rem;margin:0 0 18px}
+.card{background:#121a2b;border:1px solid #22304a;border-radius:14px;padding:16px;margin-bottom:14px}
+.who{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:#d9a441;font-weight:800;margin-bottom:8px}
+.txt{font-size:.95rem;white-space:pre-wrap;color:#eef2f8;margin:0 0 12px}
+button{width:100%;background:#d9a441;color:#1a1305;border:0;border-radius:10px;padding:14px;font-size:1rem;font-weight:800}
+button:active{background:#f0c46a}
+.done{background:#2f7a44 !important;color:#fff !important}
+</style>
+</head>
+<body>
+<h1>Posts ready to paste</h1>
+<p class="lede">Tap Copy, open the app, paste, post. Nothing here needs my account access.</p>
+
+<div class="card">
+  <div class="who">Nextdoor (Forney)</div>
+  <p class="txt" id="p1">Anybody in Forney got a graduation party, church event, or company thing coming up?
+
+I've been doing professional sound, video and lighting for 25 years, most of it corporate and weddings across DFW. I went out on my own this year, so I'm local, I answer my own phone, and the person who quotes it is the person running it.
+
+If you're planning something and need it to sound right, text me at 214-862-6442. Samples and gear here: allenkevin37-source.github.io/allen-audiovisual</p>
+  <button data-t="p1">Copy</button>
+</div>
+
+<div class="card">
+  <div class="who">Facebook local group</div>
+  <p class="txt" id="p2">If you book a venue for a wedding or company event this spring, ask one question: who's running the sound?
+
+Bad audio is the thing people remember. Not the flowers.
+
+I'm Kevin Allen, Allen Audiovisual, out of Forney. 25 years of A/V behind me, including a decade running properties as a director, producing events from $15K to $30K with main sessions and breakouts going at once.
+
+One call covers sound, video and lighting, from load-in to teardown. Free site walkthrough, quote in 24 hours.
+
+214-862-6442 (text is fastest)
+allenkevin37-source.github.io/allen-audiovisual</p>
+  <button data-t="p2">Copy</button>
+</div>
+
+<div class="card">
+  <div class="who">LinkedIn (corporate)</div>
+  <p class="txt" id="p3">Twenty-five years in A/V, and I just started my own shop.
+
+Allen Audiovisual does sound, video and lighting for corporate events across DFW. Most of my career was spent as the person running the show, including ten years as a property director producing events from $15K to $30K with main rooms and breakouts in parallel.
+
+What that means for you: the person quoting your event is the person on site running it. No handoffs, no subcontractors, no surprises at load-in.
+
+Sound, video, lighting, livestream, load-in through teardown. Based in Forney, working all of DFW.
+
+214-862-6442
+allenkevin37-source.github.io/allen-audiovisual</p>
+  <button data-t="p3">Copy</button>
+</div>
+
+<div class="card">
+  <div class="who">Church / ministry post</div>
+  <p class="txt" id="p4">Church techs and pastors in DFW: if your Sunday sound has been the same system for years and nobody remembers who installed it, that's usually a cheap fix, not a replacement.
+
+I'm Kevin Allen, Allen Audiovisual, here in Forney. 25 years of A/V. I do system tuning, wireless that doesn't drop, livestream, stage lighting for Easter and Christmas, and I train your volunteers so it works when I'm not there.
+
+No charge to come look at your room and tell you honestly what needs fixing and what doesn't.
+
+214-862-6442
+allenkevin37-source.github.io/allen-audiovisual</p>
+  <button data-t="p4">Copy</button>
+</div>
+
+<div class="card">
+  <div class="who">Pinterest pin description</div>
+  <p class="txt" id="p5">25 years of professional A/V work means you stop buying gear twice. The mics, cables, tape, speakers and lights that actually survive weekend after weekend, with the honest "skip it if" note on every pick. Real job experience, no hype. Gear list at Allen's Pro Picks.</p>
+  <button data-t="p5">Copy</button>
+</div>
+
+<div class="card">
+  <div class="who">Text to friends and past clients</div>
+  <p class="txt" id="p6">Hey, it's Kevin Allen. I finally went out on my own, Allen Audiovisual, doing sound, video and lighting for events. If you hear of anybody planning a company event or wedding that needs A/V, would you send them my way? 214-862-6442. Site's here if you want to look: allenkevin37-source.github.io/allen-audiovisual</p>
+  <button data-t="p6">Copy</button>
+</div>
+
+<div class="card">
+  <div class="who">Google Business Profile first post</div>
+  <p class="txt" id="p7">Now booking corporate events and weddings across DFW. Sound, video and lighting handled by one team, with 25 years of experience behind it. Free site walkthrough and a written quote within 24 hours. Text 214-862-6442.</p>
+  <button data-t="p7">Copy</button>
+</div>
+
+<script>
+document.querySelectorAll('button[data-t]').forEach(function(b){
+  b.addEventListener('click', function(){
+    var t = document.getElementById(b.dataset.t).innerText;
+    var done = function(){ var o=b.textContent; b.textContent='Copied'; b.classList.add('done'); setTimeout(function(){ b.textContent=o; b.classList.remove('done'); },1500); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(done).catch(function(){fb(t,done)});
+    else fb(t,done);
+  });
+});
+function fb(t,done){var a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy');done()}catch(e){}document.body.removeChild(a)}
+</script>
+</body>
+</html>
